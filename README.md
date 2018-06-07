@@ -1,1 +1,1 @@
-SmartGlove
+Code for Sign Language Translation Glove made with Arduino using Flex sensors, Accelerometer & Bluetooth Module for wireless transmission.
