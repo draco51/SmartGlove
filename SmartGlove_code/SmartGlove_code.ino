@@ -204,16 +204,16 @@ void loop() {
   Serial.println (sensorValueINDEX);
   
   //Bluetooth data sending 
-  BTserial.print("sensorValueINDEX");
-  BTserial.print(";");
+  BTserial.print("sensorValueINDEX : ");
+  BTserial.println(sensorValueINDEX);
   
   Serial.print ("sensorValue-MIDDLE = ");
   Serial.println (sensorValueMIDDLE);
   
   //Bluetooth data sending
-  BTserial.print("          ");
-  BTserial.print("sensorValueINDEX");
-  BTserial.print(";");
+  BTserial.print("sensorValueMIDDLE : ");
+  BTserial.print(sensorValueMIDDLE);
+  BTserial.println(";");
 //  
 //  Serial.print ("sensorValue-RING = ");
 //  Serial.println (sensorValueRING);
@@ -267,7 +267,7 @@ void loop() {
   
   //--------------------------------LetterA-----------------------------
   
-  if (sensorValueINDEX == 1 && sensorValueMIDDLE == 1) {
+  if (sensorValueINDEX > 200 && sensorValueMIDDLE > 200) {
     
     Serial.println  ("\n");
     Serial.println ("A"); //Print letter A to serial
@@ -283,17 +283,19 @@ void loop() {
   }
 //  
 //  //--------------------------------LetterB-----------------------------
-//  
-//  if (sensorValueTHUMB > 200 && sensorValueINDEX > 200 && sensorValueMIDDLE > 200 && sensorValueRING > 200 && accelerationX > 650 ) {
-//    
-//    Serial.println ("B"); //Print letter B to serial
-//    Serial.println  ("        ");
-//    
-//  }
-//  
-//  else {
-//    
-//  }
+  
+  if (sensorValueINDEX < 20 && sensorValueMIDDLE < 20 ) {
+    
+    Serial.println ("B"); //Print letter B to serial
+    Serial.println  ("        ");
+    //Bluetooth data sending 
+    BTserial.print("B");
+    BTserial.print(";");
+  }
+  
+  else {
+    
+  }
 //  
 //  //--------------------------------LetterC-----------------------------
 //  
