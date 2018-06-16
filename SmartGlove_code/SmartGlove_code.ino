@@ -1,10 +1,12 @@
 /*
 Sign Language Translator, 
-http://romanakozak.com/sign-language-translator/
-
 Project by: 
+Group Apocolopsy
+University of Colombo School of Computing
 Made with Arduino
 */
+
+
 #include <SoftwareSerial.h>
 SoftwareSerial BTserial(10, 11); // RX | TX
 char data = 0; 
@@ -298,18 +300,21 @@ void loop() {
   }
 //  
 //  //--------------------------------LetterC-----------------------------
-//  
-//  
-//  if (sensorValueTHUMB < 200 && sensorValueTHUMB > 20 && sensorValueINDEX < 200 && sensorValueINDEX > 20 && sensorValueMIDDLE < 200 && sensorValueMIDDLE > 20 && sensorValueRING < 200 && sensorValueRING > 20) {
-//    
-//    Serial.println ("C"); //Print letter C to serial
-//    Serial.println  ("        ");
-//   
-//  }
-//  
-//  else {
-//   
-//  }
+  
+  
+  if (sensorValueINDEX > 20 && sensorValueINDEX < 200 && sensorValueMIDDLE > 20 && sensorValueMIDDLE < 200) {
+    
+    Serial.println ("C"); //Print letter C to serial
+    Serial.println  ("        ");
+    //Bluetooth data sending 
+    BTserial.print("C");
+    BTserial.print(";");
+   
+  }
+  
+  else {
+   
+  }
 //  
 //  //--------------------------------LetterD-----------------------------
 //  
